@@ -10,6 +10,7 @@ public class countFrequency {
         countFrequency obj = new countFrequency();
         obj.count(arr);
         obj.countFreq(arr);
+        obj.countFreqByAxilaryArray(arr);
     }
 
     // using hashmap
@@ -34,4 +35,25 @@ public class countFrequency {
         System.out.println(hp);
     }
 
+    // using two array
+    void countFreqByAxilaryArray(int ar[]) {
+        boolean arr[] = new boolean[ar.length];
+        for (int i = 0; i < ar.length; i++) {
+            int count = 0;
+            boolean c = arr[i];
+            if (c == false) {
+                for (int j = 0; j < ar.length; j++) {
+                    int a = ar[i];
+                    int b = ar[j];
+                    if (a == b) {
+                        count++;
+                        arr[j] = true;
+                        arr[i] = true;
+                    } 
+                }
+                System.out.print(ar[i] + ":" + count +","+" ");
+            }
+        }
+
+    }
 }
